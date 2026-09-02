@@ -1,0 +1,2 @@
+@import "tailwindcss";
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#070b12;color:#e8edf5;font-family:Arial,Helvetica,sans-serif}button,select,input{font:inherit}.card{background:#0d1420;border:1px solid #1c2938;border-radius:18px}.muted{color:#8e9bad}.green{color:#42d392}.yellow{color:#f4c95d}.red{color:#ff6b6b}
