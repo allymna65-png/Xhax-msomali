@@ -1,0 +1,2 @@
+import {NextRequest,NextResponse} from "next/server";import {getPrediction} from "@/lib/football";
+export async function GET(req:NextRequest){const fixture=Number(req.nextUrl.searchParams.get("fixture"));if(!fixture)return NextResponse.json({ok:false,error:"fixture is required"},{status:400});try{const data=await getPrediction(fixture);return NextResponse.json({ok:true,prediction:data.response?.[0]?.predictions??null})}catch(e){return NextResponse.json({ok:false,error:e instanceof Error?e.message:"Unknown error"},{status:500})}}
