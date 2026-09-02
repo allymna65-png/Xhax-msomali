@@ -1,0 +1,2 @@
+import {NextRequest,NextResponse} from "next/server";import {getFixtures} from "@/lib/football";
+export async function GET(req:NextRequest){try{const date=req.nextUrl.searchParams.get("date")||new Date().toISOString().slice(0,10);const league=req.nextUrl.searchParams.get("league")||undefined;const data=await getFixtures(date,league);return NextResponse.json({ok:true,date,count:data.response.length,matches:data.response})}catch(e){return NextResponse.json({ok:false,error:e instanceof Error?e.message:"Unknown error"},{status:500})}}
